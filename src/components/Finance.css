@@ -1,0 +1,21 @@
+.balance {
+    width: 110px;
+    height: 80px;
+    border-radius: 7px;
+    color:black;
+    margin: 10px;
+}
+.income {
+    background-color: rgb(35, 199, 103);
+}
+.expense {
+     background-color: rgb(221, 83, 32);
+}
+.total{
+     background-color: rgb(87, 87, 188);
+}
+.boxes-finance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
