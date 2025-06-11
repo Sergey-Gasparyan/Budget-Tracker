@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import "./AddIncome.css";
 
 function AddIncome({ onClick }) {
@@ -9,7 +10,7 @@ function AddIncome({ onClick }) {
     if (name.trim() !== "" && +amount !== 0 && !isNaN(+amount)) {
       onClick({
         nameTransaction: "income",
-        id: new Date().toLocaleString(),
+        id: uuidv4(),
         amount: +amount,
         name: name[0].toUpperCase() + name.slice(1),
         date: new Date().toLocaleDateString(),

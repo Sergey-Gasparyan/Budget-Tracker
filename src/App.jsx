@@ -14,6 +14,7 @@ function App() {
     setHistory([...history,data])
   }
 
+               
   return (
     <HistoryContext.Provider value={history}>
       <div className="wrapper">
@@ -21,7 +22,7 @@ function App() {
            <Finance />
            <AddIncome onClick={onClickHandler} />
            <AddExpense onClick={onClickHandler} />
-           <Transactions />
+           <Transactions onClick={setHistory}/>
       </div>
     </HistoryContext.Provider>
   );

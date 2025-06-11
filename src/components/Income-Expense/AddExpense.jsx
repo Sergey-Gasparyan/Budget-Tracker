@@ -1,21 +1,24 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function AddExpense({ onClick }) {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
+
   function onClickHandler() {
     if (name.trim() !== "" && +amount !== 0 && !isNaN(+amount)) {
       onClick({
         nameTransaction: "expense",
         amount: +amount,
         name : name[0].toUpperCase() + name.slice(1),
-        id:new Date().toLocaleString(),
+        id: uuidv4(),
         date: new Date().toLocaleDateString(),
       });
       setName("");
       setAmount("");
     } else console.log("Something went wrong");
   }
+  
   function onChangeAmountHandler(e) {
     if (+e.target.value) setAmount(+e.target.value);
     else {
