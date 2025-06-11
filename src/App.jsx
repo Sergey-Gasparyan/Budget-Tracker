@@ -2,8 +2,7 @@ import { useState } from "react";
 import Finance from "./components/Finance";
 import Transactions from "./components/Transactions";
 import { HistoryContext } from "./components/context/HistoryContext";
-import AddExpense from "./components/Income-Expense/AddExpense";
-import AddIncome from "./components/Income-Expense/AddIncome";
+import AddTrasaction from "./components/Income-Expense/AddTrasaction"
 import "./App.css";
 
 
@@ -20,8 +19,8 @@ function App() {
       <div className="wrapper">
           <div style={{display: "flex",justifyContent: "center",fontWeight: "bold",fontSize: "35px"}}>Budget Tracker</div>
            <Finance />
-           <AddIncome onClick={onClickHandler} />
-           <AddExpense onClick={onClickHandler} />
+           <AddTrasaction onClick={onClickHandler} trasactionName="Income" />
+           <AddTrasaction onClick={onClickHandler} trasactionName="Expense" />
            <Transactions onClick={setHistory}/>
       </div>
     </HistoryContext.Provider>
