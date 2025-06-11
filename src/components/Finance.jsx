@@ -19,15 +19,15 @@ export default function Finance() {
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div className="balance income">
           <div className="boxes-finance">Income</div>
-          <div className="boxes-finance">+{income}$</div>
+          <div className="boxes-finance">+{+income.toFixed(2)}$</div>
         </div>
         <div className="balance expense">
           <div className="boxes-finance">Expense </div>
-          <div className="boxes-finance">{expense}$</div>
+          <div className="boxes-finance">{+expense.toFixed(2)}$</div>
         </div>
         <div className="balance total">
           <div className="boxes-finance" >Total </div>
-          <div className="boxes-finance" >{income + expense}$</div>
+          <div className="boxes-finance" >{+(income + expense).toFixed(2)}$</div>
         </div>
       </div>
       <hr style={{ width: "calc(100% - 100px)" }} />

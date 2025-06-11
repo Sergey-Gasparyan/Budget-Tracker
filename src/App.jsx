@@ -19,8 +19,8 @@ function App() {
       <div className="wrapper">
           <div style={{display: "flex",justifyContent: "center",fontWeight: "bold",fontSize: "35px"}}>Budget Tracker</div>
            <Finance />
-           <AddTrasaction onClick={onClickHandler} trasactionName="Income" />
-           <AddTrasaction onClick={onClickHandler} trasactionName="Expense" />
+           <AddTrasaction onClick={onClickHandler} trasactionName="income" />
+           <AddTrasaction onClick={onClickHandler} trasactionName="expense" />
            <Transactions onClick={setHistory}/>
       </div>
     </HistoryContext.Provider>

@@ -9,9 +9,9 @@ function AddTrasaction({ onClick,trasactionName }) {
   function onClickHandler() {
     if (name.trim() !== "" && +amount !== 0 && !isNaN(+amount)) {
       onClick({
-        nameTransaction: "income",
+        nameTransaction: trasactionName,
         id: uuidv4(),
-        amount: +amount,
+        amount: +Number(+amount).toFixed(2),
         name: name[0].toUpperCase() + name.slice(1),
         date: new Date().toLocaleDateString(),
       });
@@ -21,7 +21,7 @@ function AddTrasaction({ onClick,trasactionName }) {
   }
 
   function onChangeAmount(e) {
-    if (+e.target.value) setAmount(+e.target.value);
+    if (+e.target.value) setAmount(e.target.value);
     else {
       setAmount("");
       console.log("Please enter number");
@@ -29,8 +29,8 @@ function AddTrasaction({ onClick,trasactionName }) {
   }
   return (
     <div>
-      <label htmlFor="income" style={{ marginLeft: "35px", marginTop: "20px" }}>
-        Add {trasactionName}
+      <label htmlFor="income" style={{ marginLeft: "50px", marginTop: "20px" }}>
+        Add {trasactionName[0].toUpperCase() + trasactionName.slice(1)}
       </label>
       <div 
         style={{

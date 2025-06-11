@@ -34,7 +34,7 @@ export default function Transactions({ onClick }) {
       return {
         ...el,
         name,
-        amount: Math.abs(amount),
+        amount: Math.abs(amount).toFixed(2),
         mustEdit: false,
         nameTransaction: amount > 0 ? "income" : "expense",
       };
@@ -105,7 +105,7 @@ export default function Transactions({ onClick }) {
                 />
                 <input
                   value={inputs[id]?.amount || ""}
-                  onChange={(e) => setInputs({...inputs,[id] : {...inputs[id] , amount:+e.target.value}})}
+                  onChange={(e) => setInputs({...inputs,[id] : {...inputs[id] , amount:e.target.value}})}
                   className="income-input"
                   style={{ width: "120px" }}
                   placeholder="Amount"
