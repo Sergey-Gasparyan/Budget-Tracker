@@ -32,7 +32,7 @@ function AddIncome({ onClick }) {
       <label htmlFor="income" style={{ marginLeft: "35px", marginTop: "20px" }}>
         Add Income
       </label>
-      <div
+      <div 
         style={{
           display: "flex",
           alignItems: "center",

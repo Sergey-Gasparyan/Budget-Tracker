@@ -8,13 +8,12 @@ export default function Transactions({ onClick }) {
   const [inputs, setInputs] = useState({})
   const lastThree = history.length > 3 ? history.slice(-3) : history
 
-  function changeHandler(id) {
-    const selected = history.find((el) => el.id === id);
+  function changeHandler(id,name,nameTransaction,amount) {
     const updatedInputs = {
       ...inputs,
       [id]: {
-        name: selected.name,
-        amount: selected.nameTransaction === "income" ? selected.amount : -selected.amount
+        name,
+        amount : nameTransaction === "income" ? amount : -amount
       }
     }
 
@@ -23,8 +22,7 @@ export default function Transactions({ onClick }) {
        if (el.id !== id) return el
        return { ...el, mustEdit: true }
     })
-
-    onClick(newHistory);
+    onClick(newHistory)
   }
 
   
@@ -177,7 +175,7 @@ export default function Transactions({ onClick }) {
                     color: "white",
                     marginLeft: "15px",
                   }}
-                  onClick={() => changeHandler(id)}
+                  onClick={() => changeHandler(id,name,nameTransaction,amount)}
                 >
                   Change
                 </button>
