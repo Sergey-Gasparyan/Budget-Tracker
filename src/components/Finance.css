@@ -1,5 +1,5 @@
 .balance {
-    width: 115px;
+    min-width: 115px;
     height: 80px;
     border-radius: 7px;
     color:black;
